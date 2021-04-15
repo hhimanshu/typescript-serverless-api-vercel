@@ -14,7 +14,7 @@ export default (req: VercelRequest, res: VercelResponse) => {
     return;
   }
 
-  let result = addressGenerator(totalEntries, addressType);
-  console.log("result", total, result);
-  res.status(200).send({ [addressType]: result });
+  res
+    .status(200)
+    .send({ [addressType]: addressGenerator(totalEntries, addressType) });
 };

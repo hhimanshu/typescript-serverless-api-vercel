@@ -2,8 +2,8 @@ import faker from "faker";
 
 export type AllowedAddressTypes =
   | "zipCode"
-  | "zipCodeByState"
   | "city" /*|
+  | "zipCodeByState"
     "cityPrefix" |
     "citySuffix" |
     "streetName" |
@@ -30,11 +30,8 @@ export interface AddressProps {
 }
 
 export const addressGenerator = (total: number, type: AllowedAddressTypes) => {
-  console.log("creating total of", total);
   const f = getExecutable(type);
-  const result = Array.from({ length: total }, () => f());
-  console.log(result);
-  return result;
+  return Array.from({ length: total }, () => f());
 };
 
 const getExecutable = (type: AllowedAddressTypes): Function => {
