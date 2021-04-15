@@ -1,0 +1,10 @@
+{
+  "author": "hhimanshu",
+  "license": "MIT",
+  "scripts": {
+    "build": "rm -rf public && mkdir public && echo 'Custom Build' > ./public/index.html"
+  },
+  "devDependencies": {
+    "@vercel/node": "^1.9.1"
+  }
+}
