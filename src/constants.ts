@@ -1,1 +1,1 @@
-export const MAX_ENTRIES_ALLOWED = 50
+export const MAX_ENTRIES_ALLOWED = 50;

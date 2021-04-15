@@ -6,7 +6,8 @@
   },
   "devDependencies": {
     "@types/faker": "^5.5.1",
-    "@vercel/node": "^1.9.1"
+    "@vercel/node": "^1.9.1",
+    "prettier": "^2.2.1"
   },
   "dependencies": {
     "faker": "^5.5.3"
