@@ -5,6 +5,10 @@
     "build": "rm -rf public && mkdir public && echo 'Custom Build' > ./public/index.html"
   },
   "devDependencies": {
+    "@types/faker": "^5.5.1",
     "@vercel/node": "^1.9.1"
+  },
+  "dependencies": {
+    "faker": "^5.5.3"
   }
 }
