@@ -5,6 +5,7 @@
   "author": "hhimanshu",
   "license": "MIT",
   "scripts": {
+    "start": "vercel dev",
     "test": "jest",
     "semantic-release": "semantic-release -d"
   },
