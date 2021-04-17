@@ -1,0 +1,23 @@
+name: Preview CI
+on: [ deployment_status ]
+jobs:
+  staging-tests:
+    name: Run API tests
+    if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10
+
+      - name: Install deps and build
+        run: yarn install
+
+      - name: Test
+        run: yarn test:integration --ci --coverage --maxWorkers=2
+        env:
+          STAGING_URL: ${{ github.event.deployment_status.target_url }}
