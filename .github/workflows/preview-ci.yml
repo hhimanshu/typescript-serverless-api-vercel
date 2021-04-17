@@ -11,5 +11,6 @@ jobs:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
       - name: Run tests
+        uses: actions/checkout@v2
         env:
           STAGING_URL: ${{ github.event.deployment_status.target_url }}
