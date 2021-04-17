@@ -9,7 +9,7 @@ describe("Address API", () => {
   it('should return "Hello Harit"', () => {
     const name = "Harit";
     return fetch(`${STAGING_API_ENDPOINT} + hello?name=${name}`).then((res) =>
-      res.json().then((data) => {
+      res.text().then((data) => {
         expect(data).toBe(`Hello ${name}`);
       })
     );
