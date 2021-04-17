@@ -15,7 +15,7 @@ jobs:
           node-version: 10
 
       - name: Install deps and build
-        uses: yarn install
+        run: yarn install
 
       - name: Test
         run: yarn test:integration
