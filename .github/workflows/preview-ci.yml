@@ -1,8 +1,8 @@
 name: Preview CI
-on: [ push, deployment, deployment_status ]
+on: [ deployment_status ]
 jobs:
   staging-tests:
-    name: Run API tests against preview deployments
+    name: Run API tests
     if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
     steps:
@@ -10,8 +10,14 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
-      - name: Checkout code
+
+      - name: Checkout repo
         uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 10
 
       - name: Install deps and build (with cache)
         uses: bahmutov/npm-install@v1
