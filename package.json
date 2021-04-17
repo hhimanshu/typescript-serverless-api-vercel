@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "start": "vercel dev",
-    "test": "jest",
+    "test": "jest --watch",
     "semantic-release": "semantic-release"
   },
   "devDependencies": {
