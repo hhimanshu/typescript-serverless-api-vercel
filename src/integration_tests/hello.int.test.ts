@@ -8,10 +8,12 @@ let STAGING_API_ENDPOINT = process.env.STAGING_URL + "/api/";
 describe("Address API", () => {
   it('should return "Hello Harit"', () => {
     const name = "Harit";
-    return fetch(`${STAGING_API_ENDPOINT} + hello?name=${name}`).then((res) =>
-      res.text().then((data) => {
+    const url = `${STAGING_API_ENDPOINT} + hello?name=${name}`;
+    console.log(`calling ${url}`)
+    return fetch(url)
+      .then((res) => res.text())
+      .then((data) => {
         expect(data).toBe(`Hello ${name}`);
-      })
-    );
+      });
   });
 });
