@@ -12,7 +12,11 @@ jobs:
         run: echo "$GITHUB_CONTEXT"
       - name: Checkout code
         uses: actions/checkout@v2
-        env:
-          STAGING_URL: ${{ github.event.deployment_status.target_url }}
+
+      - name: Install deps and build (with cache)
+        uses: bahmutov/npm-install@v1
+
       - name: Run tests
         run: yarn test:integration
+        env:
+          STAGING_URL: ${{ github.event.deployment_status.target_url }}
