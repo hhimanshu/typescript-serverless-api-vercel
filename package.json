@@ -28,9 +28,14 @@
   "release": {
     "branches": [
       "main"
+    ],
+    "plugins": [
+      [
+        "@semantic-release/npm",
+        {
+          "npmPublish": false
+        }
+      ]
     ]
-  },
-  "publishConfig": {
-    "access": "public"
   }
 }
