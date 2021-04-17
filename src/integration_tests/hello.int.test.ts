@@ -8,7 +8,7 @@ let STAGING_API_ENDPOINT = process.env.STAGING_URL + "/api/";
 describe("Address API", () => {
   it('should return "Hello Harit"', () => {
     const name = "Harit";
-    const url = `${STAGING_API_ENDPOINT} + hello?name=${name}`;
+    const url = `${STAGING_API_ENDPOINT}/hello?name=${name}`;
     console.log(`calling ${url}`)
     return fetch(url)
       .then((res) => res.text())

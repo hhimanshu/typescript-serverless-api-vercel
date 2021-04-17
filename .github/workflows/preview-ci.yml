@@ -18,6 +18,6 @@ jobs:
         run: yarn install
 
       - name: Test
-        run: yarn test:integration
+        run: yarn test:integration --ci --coverage --maxWorkers=2
         env:
           STAGING_URL: ${{ github.event.deployment_status.target_url }}
