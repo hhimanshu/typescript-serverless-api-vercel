@@ -33,4 +33,4 @@ http://localhost:3000/api/currency
 ## Start Developing
 - Clone this repository (or better fork it so that you can make changes in your repo)  
 - Run `yarn start`. This will kick-off `vercel dev` so that you can start developing your features  
-- Run `yarn test` to run tests in watch mode
+- Run `yarn test` to run tests
