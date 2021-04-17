@@ -13,7 +13,7 @@ describe("Address API", () => {
     return fetch(url)
       .then((res) => res.text())
       .then((data) => {
-        expect(data).toBe(`Hello ${name}`);
+        expect(data).toBe(`Hello ${name}!`);
       });
   });
 });
