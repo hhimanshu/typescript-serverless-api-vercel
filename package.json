@@ -5,8 +5,9 @@
   "license": "MIT",
   "scripts": {
     "start": "vercel dev",
-    "test": "jest",
-    "test:watch": "jest --watch",
+    "test": "jest --testPathIgnorePatterns=integration_tests",
+    "test:watch": "jest --watch --testPathIgnorePatterns=integration_tests",
+    "test:integration": "jest int",
     "semantic-release": "semantic-release"
   },
   "devDependencies": {

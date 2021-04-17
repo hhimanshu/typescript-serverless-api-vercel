@@ -1,7 +1,8 @@
 name: Preview CI
-on: [push, deployment, deployment_status]
+on: [ push, deployment, deployment_status ]
 jobs:
-  show-event:
+  staging-tests:
+    name: Run API tests against preview deployments
     if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
     steps:
@@ -9,3 +10,6 @@ jobs:
         env:
           GITHUB_CONTEXT: ${{ toJson(github) }}
         run: echo "$GITHUB_CONTEXT"
+      - name: Run tests
+        env:
+          STAGING_URL: ${{ github.event.deployment_status.target_url }}
