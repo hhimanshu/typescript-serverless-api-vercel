@@ -19,10 +19,7 @@ jobs:
         with:
           node-version: 10
 
-      - name: Install deps and build (with cache)
-        uses: bahmutov/npm-install@v1
-
       - name: Run tests
-        run: yarn test:integration
+        run: npx yarn test:integration
         env:
           STAGING_URL: ${{ github.event.deployment_status.target_url }}
