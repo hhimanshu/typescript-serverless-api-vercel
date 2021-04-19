@@ -2,6 +2,7 @@
   "name": "@hhimanshu/typescript-serverless-vercel",
   "version": "0.0.0-development",
   "author": "hhimanshu",
+  "private": true,
   "license": "MIT",
   "scripts": {
     "start": "vercel dev",
@@ -30,14 +31,6 @@
   "release": {
     "branches": [
       "main"
-    ],
-    "plugins": [
-      [
-        "@semantic-release/npm",
-        {
-          "npmPublish": false
-        }
-      ]
     ]
   }
 }
