@@ -13,6 +13,7 @@ describe("Address API", () => {
     return fetch(url)
       .then((res) => res.text())
       .then((data) => {
+        expect(data).toBeDefined()
         expect(data).toBe(`Hello ${name}!`);
       });
   });
