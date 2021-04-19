@@ -2,7 +2,7 @@ name: Preview CI
 on: [ deployment_status ]
 jobs:
   staging-tests:
-    name: Run API tests
+    name: Staging Tests
     if: github.event_name == 'deployment_status' && github.event.deployment_status.state == 'success'
     runs-on: ubuntu-latest
     steps:
